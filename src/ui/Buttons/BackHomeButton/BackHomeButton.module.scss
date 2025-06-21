@@ -1,0 +1,19 @@
+.link {
+  width: 200px;
+  .button {
+    margin-top: 35px;
+    background-color: rgb(255, 98, 0);
+    border: none;
+    height: 50px;
+    border-radius: 25px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    &:hover {
+      transition: 0.4s;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.descriptionBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 75vh;
+  .image {
+    width: 350px;
+    height: 350px;
+  }
+  .title {
+    margin-block: 20px;
+  }
+  .pizzaDescription {
+    margin-bottom: 20px;
+  }
+  .price {
+    font-size: 25px;
+  }
+}

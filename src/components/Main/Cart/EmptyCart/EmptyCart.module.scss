@@ -1,0 +1,18 @@
+.emptyCart {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .title {
+    font-size: 24px;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .image {
+    margin-block: 30px;
+    width: 300px;
+    height: 300px;
+  }
+}
