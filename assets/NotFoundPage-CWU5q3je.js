@@ -1,0 +1,2 @@
+import{j as s}from"./index-D_ikmzhg.js";import{B as t}from"./BackHomeButton-BDEw4rUd.js";const n="_notFound_1cyvl_1",e="_smile_1cyvl_8",o={notFound:n,smile:e},l=()=>s.jsxs("div",{className:o.notFound,children:[s.jsx("span",{className:o.smile,children:"☹️"}),s.jsx("h1",{className:o.title,children:"Ничего не найдено "}),s.jsx(t,{title:"Вернуться на главную"})]}),i=()=>s.jsx(l,{});export{i as default};
+//# sourceMappingURL=NotFoundPage-CWU5q3je.js.map
