@@ -1,8 +1,8 @@
-import { createBrowserRouter } from "react-router-dom";
-import { Layout } from "../layout/Layout";
-import { HomePage } from "../pages/HomePage";
 import { lazy, Suspense } from "react";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import { Layout } from "../layout/Layout";
 import { Loader } from "../components/Loader/Loader";
+import { HomePage } from "../pages/HomePage";
 import PaymentPage from "../pages/PaymentPage";
 
 const CartPage = lazy(() => import("../pages/CartPage"));
@@ -11,49 +11,18 @@ const PizzaDescriptionPage = lazy(
   () => import("../pages/PizzaDescriptionPage")
 );
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/",
-        element: <HomePage />,
-      },
-      {
-        path: "/pizza/:title/:id",
-        element: (
-          <Suspense fallback={<Loader />}>
-            <PizzaDescriptionPage />{" "}
-          </Suspense>
-        ),
-      },
-      {
-        path: "/basket",
-        element: (
-          <Suspense fallback={<Loader />}>
-            <CartPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/payment",
-        element: (
-          <Suspense fallback={<Loader />}>
-            <PaymentPage />
-          </Suspense>
-        ),
-      },
-    ],
-  },
-  {
-    path: "*",
-    element: (
-      <Suspense fallback={<Loader />}>
-        <NotFound />
-      </Suspense>
-    ),
-  },
-]);
-
-export default router;
+export const AppRouter = () => (
+  <HashRouter>
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="pizza/:title/:id" element={<PizzaDescriptionPage />} />
+          <Route path="basket" element={<CartPage />} />
+          <Route path="payment" element={<PaymentPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </Suspense>
+  </HashRouter>
+);
